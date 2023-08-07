@@ -16,7 +16,7 @@ def objective(trial, X_train, X_val, y_train, y_val, device, vocab_size,  batch_
 		batch_size = trial.suggest_categorical("batch_size", [16,32,64])
 	lr = trial.suggest_float("lr", 1e-6, 2e-3, log=True)
 	hidden_dim = trial.suggest_int("hidden_dim", 256, 2048)
-	n_layers = trail.suggest_int("n_layers", 1, 10)
+	n_layers = trial.suggest_int("n_layers", 1, 10)
 	dropout = trial.suggest_float("dropout", 0.1, 0.5)
 	model = classes.GRUNet(vocab_size, hidden_dim, n_layers, device, dropout)
 
