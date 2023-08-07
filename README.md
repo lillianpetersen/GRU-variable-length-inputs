@@ -1,6 +1,6 @@
 # GRU-variable-length-inputs
 
-Here is code for training a GRU (gated recurrent unit) that can work with variable length inputs. Hyperparameters are tuned via optuna, and the hyperparameter search is parallelized over multiple GPUs. 
+Functions for training a GRU (gated recurrent unit) that can work with variable length inputs. Hyperparameters are tuned via optuna, and the hyperparameter search is parallelized over multiple GPUs. 
 
 See main.py for examples on how to run the hyperparameter search and how to train the GRU.
 
