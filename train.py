@@ -14,11 +14,12 @@ import benchmark
 def train_model(X_train, X_val, y_train, y_val, device, lr, hidden_dim, dropout, n_layers, vocab_size, batch_size, modeldir, save_descript):
 	'''
 	Inputs:
-		X_train: list of numpy matrices (each seq_length x vocab_length)
-		X_val: list of numpy matrices (each seq_length x vocab_length)
+		X_train: list of numpy arrays (each seq_length x vocab_length)
+		X_val: list of numpy arrays (each seq_length x vocab_length)
 		y_train: list-like, continuous target for X_train (this code is made for regression)
 		y_val: list-like, continuous target for X_val
 		device: str, eg 'cuda:0'
+		lr: learning rate
 		hidden_dim: int, hidden dimension of GRU
 		dropout: float between 0 and 1. dropout percentage
 		n_layers: int, number of layers in the GRU
@@ -75,7 +76,7 @@ def train_model(X_train, X_val, y_train, y_val, device, lr, hidden_dim, dropout,
 def apply_model(X_test, y_test, device, hidden_dim, dropout, n_layers, vocab_size, batch_size, modeldir, figdir, save_descript, title):
 	'''
 	Inputs:
-		X_test: list of numpy matrices (each seq_length x vocab_length)
+		X_test: list of numpy arrays (each seq_length x vocab_length)
 		y_test: list-like, continuous target for X_test (this code is made for regression)
 		device: str, eg 'cuda:0'
 		hidden_dim: int, hidden dimension of GRU

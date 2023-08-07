@@ -43,7 +43,8 @@ print('Training using best hyperparameters')
 best_trial = study.best_trial
 print(best_trial.params)
 params_df = pd.DataFrame(best_trial.params, index=[1])
-params_df.to_csv(modeldir+'/best_'+savetitle+'.csv')
+params_df.to_csv(modeldir+'/best_'+save_descript+'.csv')
+
 train.train_model(X_train, X_val, y_train, y_val, 
 		device=device, lr=best_trial.params['lr'], batch_size=batch_size, 
 		n_layers=best_trial.params['n_layers'],
